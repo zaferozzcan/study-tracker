@@ -1,0 +1,27 @@
+#header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e02525;
+}
+#header .title {
+  margin: 0;
+  padding: 2rem 1rem;
+  color: #ffffff;
+}
+#header .auth-options {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+#header .auth-options button {
+  padding: 0 1rem;
+  /* background-color: #b91b1b; */
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+#header .auth-options button:hover {
+  background-color: #be3a3a;
+}

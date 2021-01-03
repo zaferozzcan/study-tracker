@@ -22,6 +22,7 @@ export default function Register() {
       })
       .catch((err) => console.log(err));
   };
+  console.log(email, password);
   return (
     <div className="signin-container">
       <h5>Sign Up </h5>

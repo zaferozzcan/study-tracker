@@ -3,13 +3,10 @@ import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { auth } from "../../firebase";
 
-export default function SignIn() {
+export default function Register() {
   const history = useHistory();
-  // const [name, setName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   console.log("email", email, "password", password);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -28,24 +25,6 @@ export default function SignIn() {
     <div className="signin-container">
       <h5>Sign Up </h5>
       <Form>
-        {/* <Form.Group controlId="Name">
-          <Form.Label>Customer Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Customer Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="Lastname">
-          <Form.Label>Lastname</Form.Label>
-          <Form.Control
-            type="text"
-            name="Lastname"
-            placeholder="Lastname"
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </Form.Group> */}
         <Form.Group controlId="Email">
           <Form.Label>Email address</Form.Label>
           <Form.Control

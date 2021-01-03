@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
-import "../../style/SignIn.css";
+import "../../style/register.css";
 import { auth } from "../../firebase";
 
 export default function SignIn() {
@@ -30,7 +30,7 @@ export default function SignIn() {
       .catch((err) => console.log(err));
   };
 
-  console.log("user in sign in", user);
+  //   console.log("user in sign in", user);
   return (
     <div className="signin-container">
       <h5>Sign In </h5>

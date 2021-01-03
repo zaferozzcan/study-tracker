@@ -1,30 +1,39 @@
 import React, { useState } from "react";
-import "../../style/register.css";
+import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import "../../style/SignIn.css";
 import { auth } from "../../firebase";
 
-export default function Register() {
+export default function SignIn() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleRegister = (e) => {
+  const handleSubmitSignIn = (e) => {
+    // console.log("inside login");
     e.preventDefault();
-
     auth
-      .createUserWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth) {
-          console.log(auth);
-          history.push("/");
-        }
+        // console.log("auth", auth);
+        history.push("/");
       })
+      .catch((error) => alert(error.message));
+
+    // dbs;
+    axios({
+      method: "post",
+      url: `https://capstone-store-api.herokuapp.com/user`,
+      data: { user_email: email },
+    })
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+
+  console.log("user in sign in", user);
   return (
     <div className="signin-container">
-      <h5>Sign Up </h5>
+      <h5>Sign In </h5>
       <Form>
         <Form.Group controlId="Email">
           <Form.Label>Email address</Form.Label>
@@ -44,14 +53,18 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button onClick={handleRegister} variant="success" type="submit">
-          Register
+        <Button onClick={handleSubmitSignIn} variant="primary" type="submit">
+          SignIn
         </Button>
         <Link to={"/"}>
           <Button variant="danger" type="submit">
             Cancel
           </Button>
         </Link>
+        <Form.Text className="text-muted">
+          Are you new around here?
+          <Link to={"/register"}>Register</Link>
+        </Form.Text>
       </Form>
     </div>
   );

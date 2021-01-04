@@ -21,16 +21,15 @@ export default function SignIn() {
       .catch((error) => alert(error.message));
 
     // dbs;
-    axios({
-      method: "post",
-      url: `https://capstone-store-api.herokuapp.com/user`,
-      data: { user_email: email },
-    })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    // axios({
+    //   method: "post",
+    //   url: `https://capstone-store-api.herokuapp.com/user`,
+    //   data: { user_email: email },
+    // })
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err));
   };
 
-  //   console.log("user in sign in", user);
   return (
     <div className="signin-container">
       <h5>Sign In </h5>

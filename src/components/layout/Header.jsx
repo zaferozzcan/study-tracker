@@ -16,10 +16,18 @@ export default function Header() {
       <NavLink to="/">
         <h1 className="title">Study Tracker</h1>
       </NavLink>
+
       {user ? (
-        <button onClick={hanleSignOut}>SignOut</button>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <p>Hello,{`${user.email}`}-_-</p>
+          <span></span>
+          <br />
+          <NavLink to="/" onClick={hanleSignOut}>
+            SignOut
+          </NavLink>
+        </div>
       ) : (
-        "sign in please"
+        <NavLink to="/user/signin">Sign In</NavLink>
       )}
     </header>
   );

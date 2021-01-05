@@ -9,8 +9,8 @@ import { auth } from "./firebase";
 import { useStateValue } from "./providers/StateProvider";
 
 function App() {
-  const [dispatch] = useStateValue();
-  console.log("auth in app js", auth);
+  const [{ user }, dispatch] = useStateValue();
+  // console.log("auth in app js", auth);
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       // console.log("user ", authUser);
@@ -28,7 +28,7 @@ function App() {
       }
     });
   }, []);
-
+  // console.log("signed in user", user.email);
   return (
     <div className="App">
       <Header />

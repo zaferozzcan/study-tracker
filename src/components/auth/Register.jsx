@@ -3,11 +3,13 @@ import "../../style/register.css";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { auth } from "../../firebase";
+import { useStateValue } from "../../providers/StateProvider";
 
 export default function Register() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [{ user }, dispatch] = useStateValue();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export default function Register() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          console.log(auth);
+          // console.log(auth);
           history.push("/");
         }
       })

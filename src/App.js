@@ -1,15 +1,39 @@
 import "./App.css";
+import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import Register from "./components/auth/Register";
 import SignIn from "./components/auth/SignIn";
 import Header from "./components/layout/Header";
+import { auth } from "./firebase";
+import { useStateValue } from "./providers/StateProvider";
 
 function App() {
+  const [dispatch] = useStateValue();
+  console.log("auth in app js", auth);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      // console.log("user ", authUser);
+
+      if (authUser) {
+        dispatch({
+          type: "LOGIN_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "LOGIN_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <Header />
       <Switch>
+        <Route exact path="/"></Route>
         <Route exact path="/user/register" component={Register}></Route>
         <Route exact path="/user/signin" component={SignIn}></Route>
       </Switch>

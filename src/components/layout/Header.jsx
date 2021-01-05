@@ -1,13 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../../style/header.css";
+import { auth } from "../../firebase";
 
 export default function Header() {
+  function hanleSignOut() {
+    auth.signOut();
+  }
   return (
     <header id="header">
-      <Link to="/">
+      <NavLink to="/">
         <h1 className="title">Study Tracker</h1>
-      </Link>
+      </NavLink>
+      {auth ? (
+        <button onClick={hanleSignOut}>SignOut</button>
+      ) : (
+        "sign in please"
+      )}
     </header>
   );
 }

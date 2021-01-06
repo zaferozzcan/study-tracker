@@ -45,6 +45,10 @@ function App() {
           <Header />
           <SignIn />
         </Route>
+        <Route exact path="/create">
+          <Header />
+          {/* <CreateFrom /> */}
+        </Route>
       </Switch>
     </div>
   );

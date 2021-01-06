@@ -8,18 +8,21 @@
   width: 80%;
   height: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid white; /* The typwriter cursor */
+  /* border: 0.15em solid white; The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: typing 3.5s steps(40, end), 0.75s step-end infinite;
-  padding-top: 6rem;
+  padding: 6rem 0;
   color: #1dd135;
-  background-color: red;
+  font-weight: 700;
 }
 
 /* The typing effect */

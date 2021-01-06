@@ -13,21 +13,23 @@ export default function Header() {
   }
   return (
     <header id="header">
-      <NavLink to="/">
+      <NavLink className="nav-link" to="/">
         <h1 className="title">Study Tracker</h1>
       </NavLink>
 
       {user ? (
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <p>Hello,{`${user.email}`}-_-</p>
-          <span></span>
-          <br />
-          <NavLink to="/" onClick={hanleSignOut}>
+        <div className="header-right-elements">
+          <p className="header-greeting">Hello,{`${user.email}`}</p>
+          <NavLink className="nav-link" to="/" onClick={hanleSignOut}>
             SignOut
           </NavLink>
         </div>
       ) : (
-        <NavLink to="/user/signin">Sign In</NavLink>
+        <div className="header-right-elements">
+          <NavLink className="nav-link" to="/user/signin">
+            Sign In
+          </NavLink>
+        </div>
       )}
     </header>
   );

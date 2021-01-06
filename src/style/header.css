@@ -3,7 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e02525;
+  background-color: #1dd135;
+  box-shadow: 0 0 7px #139e25;
+  margin: 2px 5px;
 }
 #header .title {
   margin: 0;
@@ -24,4 +26,34 @@
 }
 #header .auth-options button:hover {
   background-color: #be3a3a;
+}
+
+.header-right-elements {
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-top: auto;
+}
+
+.header-right-elements p {
+  padding: 8px 16px;
+}
+
+.nav-link {
+  color: white;
+}
+
+@media only screen and (max-width: 720px) {
+  #header .title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: #ffffff;
+  }
+  .header-greeting {
+    display: none;
+  }
 }

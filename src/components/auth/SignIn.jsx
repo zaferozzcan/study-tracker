@@ -62,7 +62,7 @@ export default function SignIn() {
         </Link>
         <Form.Text className="text-muted">
           Are you new around here?
-          <Link to={"/register"}>Register</Link>
+          <Link to={"/user/register"}>Register</Link>
         </Form.Text>
       </Form>
     </div>

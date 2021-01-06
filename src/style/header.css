@@ -11,6 +11,7 @@
   margin: 0;
   padding: 2rem 1rem;
   color: #ffffff;
+  font-weight: 800;
 }
 #header .auth-options {
   height: 100%;
@@ -36,6 +37,7 @@
   text-decoration: none;
   padding: 8px 16px;
   margin-top: auto;
+  font-weight: 800;
 }
 
 .header-right-elements p {
@@ -52,6 +54,7 @@
     margin: 0;
     padding: 2rem 1rem;
     color: #ffffff;
+    font-weight: 800;
   }
   .header-greeting {
     display: none;

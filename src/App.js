@@ -31,11 +31,18 @@ function App() {
   // console.log("signed in user", user.email);
   return (
     <div className="App">
-      <Header />
       <Switch>
-        <Route exact path="/"></Route>
-        <Route exact path="/user/register" component={Register}></Route>
-        <Route exact path="/user/signin" component={SignIn}></Route>
+        <Route exact path="/">
+          <Header />
+        </Route>
+        <Route exact path="/user/register">
+          <Header />
+          <Register />
+        </Route>
+        <Route exact path="/user/signin" component={SignIn}>
+          <Header />
+          <SignIn />
+        </Route>
       </Switch>
     </div>
   );

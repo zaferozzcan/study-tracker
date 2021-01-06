@@ -11,6 +11,11 @@ export default function Header() {
     auth.signOut();
     history.push("/");
   }
+
+  let location = window.location.href;
+  let includesAuth =
+    location.includes("signin") || location.includes("register");
+
   return (
     <header id="header">
       <NavLink className="nav-link" to="/">
@@ -21,13 +26,13 @@ export default function Header() {
         <div className="header-right-elements">
           <p className="header-greeting">Hello,{`${user.email}`}</p>
           <NavLink className="nav-link" to="/" onClick={hanleSignOut}>
-            SignOut
+            {!includesAuth ? "SignOut" : null}
           </NavLink>
         </div>
       ) : (
         <div className="header-right-elements">
           <NavLink className="nav-link" to="/user/signin">
-            Sign In
+            {!includesAuth ? "SignIn" : null}
           </NavLink>
         </div>
       )}

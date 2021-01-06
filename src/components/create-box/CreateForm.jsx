@@ -1,22 +1,41 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import "../../style/create-box.css";
+import { useStateValue } from "../../providers/StateProvider";
 
 export default function CreateForm() {
+  const history = useHistory();
+  const [, dispatch] = useStateValue();
   const [studyName, setStudyName] = useState("");
   const [studyCategory, setStudyCategory] = useState();
 
-  console.log(studyName, studyCategory);
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    dispatch({
+      type: "ADD_STUDY",
+      study: {
+        studyName,
+        studyCategory,
+      },
+    });
+    setStudyName("");
+    setStudyCategory("");
+    history.push("/home");
+  }
+
   return (
     <div className="create-box">
       <div className="create-box-inner">
-        <form action="">
+        <form onSubmit={handleSubmit} action="">
           <label htmlFor="name">Study Subject</label>
           <input
             onChange={(e) => setStudyName(e.target.value)}
             id="name"
             type="text"
             name="name"
+            value={studyName || ""}
           />
           <br />
           <label htmlFor="category">Study Category</label>
@@ -25,9 +44,13 @@ export default function CreateForm() {
             id="category"
             type="text"
             name="category"
+            value={studyCategory || ""}
           />
           <br />
-          <Button variant="success"> Create </Button>
+          <Button type="submit" variant="success">
+            {" "}
+            Create{" "}
+          </Button>
         </form>
       </div>
     </div>

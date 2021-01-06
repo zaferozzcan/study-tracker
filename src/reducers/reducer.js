@@ -9,6 +9,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case "ADD_STUDY":
+      return {
+        ...state,
+        study: action.study,
+      };
     default:
       return state;
   }

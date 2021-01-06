@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Register from "./components/auth/Register";
 import SignIn from "./components/auth/SignIn";
 import Header from "./components/layout/Header";
+import Banner from "./components/layout/Banner";
 import { auth } from "./firebase";
 import { useStateValue } from "./providers/StateProvider";
 
@@ -34,6 +35,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header />
+          <Banner />
         </Route>
         <Route exact path="/user/register">
           <Header />

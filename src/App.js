@@ -1,13 +1,14 @@
 import "./App.css";
 import { useEffect } from "react";
+import { auth } from "./firebase";
+import { useStateValue } from "./providers/StateProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import Register from "./components/auth/Register";
 import SignIn from "./components/auth/SignIn";
 import Header from "./components/layout/Header";
 import Banner from "./components/layout/Banner";
-import { auth } from "./firebase";
-import { useStateValue } from "./providers/StateProvider";
+import CreateForm from "./components/create-box/CreateForm";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -47,7 +48,7 @@ function App() {
         </Route>
         <Route exact path="/create">
           <Header />
-          {/* <CreateFrom /> */}
+          <CreateForm />
         </Route>
       </Switch>
     </div>

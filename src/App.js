@@ -9,6 +9,7 @@ import SignIn from "./components/auth/SignIn";
 import Header from "./components/layout/Header";
 import Banner from "./components/layout/Banner";
 import CreateForm from "./components/create-box/CreateForm";
+import TrackBox from "./components/track-box/TrackBox";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -37,6 +38,10 @@ function App() {
         <Route exact path="/">
           <Header />
           <Banner />
+        </Route>
+        <Route exact path={"/home"}>
+          <Header />
+          <TrackBox />
         </Route>
         <Route exact path="/user/register">
           <Header />

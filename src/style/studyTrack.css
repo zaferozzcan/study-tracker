@@ -1,0 +1,67 @@
+#study-track-two {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e20a;
+  box-shadow: 0 0 7px #139e25;
+  margin: 1px 1px;
+}
+#study-track-two .title {
+  margin: 0;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+#study-track .auth-options {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+#study-track .auth-options button {
+  padding: 0 1rem;
+  /* background-color: #b91b1b; */
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+#study-track .auth-options button:hover {
+  background-color: #be3a3a;
+}
+
+.study-track-right-elements {
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-top: auto;
+  font-weight: 800;
+}
+
+.study-track-right-elements p {
+  padding: 8px 16px;
+}
+
+.nav-link {
+  color: white;
+}
+
+@media only screen and (max-width: 720px) {
+  #study-track .title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+  .study-track-greeting {
+    display: none;
+  }
+}
+
+.study-track-two-days {
+  margin-right: 400px;
+}

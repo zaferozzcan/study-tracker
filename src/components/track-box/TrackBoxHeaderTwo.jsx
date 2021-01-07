@@ -14,42 +14,32 @@ export default function TrackBoxHeaderTwo() {
         <div className="nav-link">
           <h1 className="title">Studies</h1>
         </div>
-        <div className="header-track-two-days">
+        <div className="study-track-two-days">
           <table>
             <thead></thead>
             <tbody>
-              <tr>
-                <td>Sunday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Monday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Tuesday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Wednesday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Thursday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Friday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Saturday</td>
+              <tr className="study-track-two-days-row">
+                <div className="study-track-data">
+                  <td className="study-track-td">Sunday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Monday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Tuesday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Wednesday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Thursday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Friday</td>
+                </div>
+                <div className="study-track-data">
+                  <td className="study-track-td">Saturday</td>
+                </div>
               </tr>
             </tbody>
           </table>

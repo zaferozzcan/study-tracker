@@ -12,20 +12,34 @@ export default function StudyTrack() {
           <h1 className="title">Studies</h1>
         </NavLink> */}
         <div className="nav-link">
-          <h1 className="title">Name</h1>
+          <h1 className="title-study-tracker">Name</h1>
         </div>
         <div className="study-track-two-days">
           <table>
             <thead></thead>
             <tbody>
-              <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
+              <tr className="study-track-two-days-row">
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
+                <div className="study-track-data">
+                  <td>X</td>
+                </div>
               </tr>
             </tbody>
           </table>

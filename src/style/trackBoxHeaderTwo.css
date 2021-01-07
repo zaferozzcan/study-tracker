@@ -47,6 +47,7 @@
 
 .nav-link {
   color: white;
+  margin-right: 10rem;
 }
 
 @media only screen and (max-width: 720px) {
@@ -63,5 +64,18 @@
 }
 
 .header-track-two-days {
-  margin-right: 400px;
+  margin-right: 300px;
+}
+
+.study-track-two-days-row {
+  display: flex;
+}
+
+.study-track-data {
+  width: 7rem;
+  text-align: center;
+}
+
+.study-track-td {
+  text-align: center;
 }

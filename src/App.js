@@ -39,10 +39,6 @@ function App() {
           <Header />
           <Banner />
         </Route>
-        <Route exact path={"/home"}>
-          <Header />
-          <TrackBox />
-        </Route>
         <Route exact path="/user/register">
           <Header />
           <Register />
@@ -54,6 +50,10 @@ function App() {
         <Route exact path="/create">
           <Header />
           <CreateForm />
+        </Route>
+        <Route exact path={"/user/track"}>
+          <Header />
+          <TrackBox />
         </Route>
       </Switch>
     </div>

@@ -22,7 +22,7 @@ export default function CreateForm() {
     });
     setStudyName("");
     setStudyCategory("");
-    history.push("/home");
+    history.push("/user/track");
   }
 
   return (

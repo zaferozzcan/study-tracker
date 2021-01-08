@@ -1,0 +1,25 @@
+.track-box-up {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e20a;
+  box-shadow: 0 0 7px #139e25;
+  margin: 1px 1px;
+  flex-wrap: nowrap;
+}
+.track-box-up-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.track-box-up-row {
+  width: 100%;
+}
+
+.study-todo-title {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.5rem;
+}

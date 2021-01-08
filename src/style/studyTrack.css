@@ -9,7 +9,8 @@
 }
 #study-track-two .title-study-tracker {
   margin: 0;
-  padding: 2rem 2.5rem;
+  padding: 2rem 1rem;
+  padding-right: 3.5rem;
   color: #ffffff;
   font-weight: 800;
   font-size: 1.5rem;
@@ -47,7 +48,6 @@
 
 .nav-link {
   color: white;
-  margin-right: 10rem;
 }
 
 @media only screen and (max-width: 720px) {

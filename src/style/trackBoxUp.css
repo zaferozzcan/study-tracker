@@ -37,11 +37,11 @@
     margin-right: 4rem;
   }
   .track-box-up-col-title {
-    font-size: smaller;
     margin: 0;
     color: #ffffff;
     font-weight: 800;
-    margin: 0 3rem 0 1.7rem;
+    font-size: 1rem;
+    margin: 0 3rem 0 2rem;
   }
 }
 
@@ -60,10 +60,10 @@
   }
 
   .track-box-up-col-title {
-    font-size: small;
     margin: 0;
     color: #ffffff;
     font-weight: 800;
-    margin: 0 2.3rem 0 1.2rem;
+    font-size: 1rem;
+    margin: 0 2.3rem 0 2rem;
   }
 }

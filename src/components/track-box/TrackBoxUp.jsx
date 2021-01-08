@@ -17,8 +17,9 @@ export default function TrackBoxUp() {
           <Col>Saturday</Col>
         </Row>
       </Container> */}
+
       <div className="track-box-up-container">
-        <div className="track-box-up-col">StudyItemName</div>
+        <div className="track-box-up-col-title">StudyItemName</div>
         <div className="track-box-up-col">Sunday</div>
         <div className="track-box-up-col">Monday</div>
         <div className="track-box-up-col">Tuesday</div>

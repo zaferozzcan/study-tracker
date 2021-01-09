@@ -39,6 +39,8 @@
     width: 25px;
     height: 20px;
     margin-right: 4rem;
+    display: flex;
+    justify-content: center;
   }
   .track-box-up-col-title {
     margin: 0;
@@ -61,6 +63,8 @@
     width: 25px;
     height: 20px;
     margin-right: 2rem;
+    display: flex;
+    justify-content: center;
   }
 
   .track-box-up-col-title {
@@ -72,6 +76,6 @@
   }
 }
 
-.track-box-up-col > span {
+/* .track-box-up-col > span {
   margin: 0 auto;
-}
+} */

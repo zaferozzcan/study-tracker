@@ -7,7 +7,7 @@ import TrackBoxUp from "../../components/track-box/TrackBoxUp";
 import TrackBoxStudy from "../../components/track-box/TrackBoxStudy";
 export default function TrackBox() {
   const [{ study }] = useStateValue();
-  console.log(study);
+
   return (
     <div>
       <TrackBoxHeaderOne />

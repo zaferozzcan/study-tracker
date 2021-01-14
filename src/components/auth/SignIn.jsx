@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import "../../style/register.css";
@@ -19,15 +18,6 @@ export default function SignIn() {
         history.push("/");
       })
       .catch((error) => alert(error.message));
-
-    // dbs;
-    // axios({
-    //   method: "post",
-    //   url: `https://capstone-store-api.herokuapp.com/user`,
-    //   data: { user_email: email },
-    // })
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
   };
 
   return (

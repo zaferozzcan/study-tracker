@@ -2,9 +2,11 @@ import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import "../../style/studyTrack.css";
 // import { auth } from "../../firebase";
-// import { useStateValue } from "../../providers/StateProvider";
+import { useStateValue } from "../../providers/StateProvider";
 
 export default function StudyTrack() {
+  const { study } = useStateValue();
+
   return (
     <div>
       <header id="study-track-two">
@@ -12,7 +14,7 @@ export default function StudyTrack() {
           <h1 className="title">Studies</h1>
         </NavLink> */}
         <div className="nav-link">
-          <h1 className="title-study-tracker">Name</h1>
+          <h1 className="title-study-tracker">{study.studyName}/</h1>
         </div>
         <div className="study-track-two-days">
           <table>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../style/trackBoxUp.css";
+import { useStateValue } from "../../providers/StateProvider";
 
 export default function TrackBoxStudy() {
   const [xhange1, setXhange1] = useState("❌");
@@ -9,10 +10,13 @@ export default function TrackBoxStudy() {
   const [xhange5, setXhange5] = useState("❌");
   const [xhange6, setXhange6] = useState("❌");
   const [xhange7, setXhange7] = useState("❌");
-
+  const [{ study }] = useStateValue();
+  console.log(study);
   return (
     <div className="track-box-up">
-      <div className="track-box-up-col-title">Days</div>
+      <div className="track-box-up-col-title">
+        {study ? study.studyName : "name"}
+      </div>
       <div className="track-box-up-container">
         <div className="track-box-up-col">
           <span

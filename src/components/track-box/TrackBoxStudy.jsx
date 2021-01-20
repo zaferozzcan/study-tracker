@@ -53,9 +53,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="2"
-            onClick={() =>
-              xhange2 === false ? setXhange2(true) : setXhange2(false)
-            }
+            onClick={() => {
+              xhange2 === false ? setXhange2(true) : setXhange2(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: !xhange2,
+                    tuesday: xhange3,
+                    wednesday: xhange4,
+                    thursday: xhange5,
+                    friday: xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange2 ? "✅" : "❌"}
           </span>
@@ -63,9 +76,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="3"
-            onClick={() =>
-              xhange3 === false ? setXhange3(true) : setXhange3(false)
-            }
+            onClick={() => {
+              xhange3 === false ? setXhange3(true) : setXhange3(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: xhange2,
+                    tuesday: !xhange3,
+                    wednesday: xhange4,
+                    thursday: xhange5,
+                    friday: xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange3 ? "✅" : "❌"}
           </span>
@@ -73,9 +99,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="4"
-            onClick={() =>
-              xhange4 === false ? setXhange4(true) : setXhange4(false)
-            }
+            onClick={() => {
+              xhange4 === false ? setXhange4(true) : setXhange4(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: xhange2,
+                    tuesday: xhange3,
+                    wednesday: !xhange4,
+                    thursday: xhange5,
+                    friday: xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange4 ? "✅" : "❌"}
           </span>
@@ -83,9 +122,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="5"
-            onClick={() =>
-              xhange5 === false ? setXhange5(true) : setXhange5(false)
-            }
+            onClick={() => {
+              xhange5 === false ? setXhange5(true) : setXhange5(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: xhange2,
+                    tuesday: xhange3,
+                    wednesday: xhange4,
+                    thursday: !xhange5,
+                    friday: xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange5 ? "✅" : "❌"}
           </span>
@@ -93,9 +145,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="6"
-            onClick={() =>
-              xhange6 === false ? setXhange6(true) : setXhange6(false)
-            }
+            onClick={() => {
+              xhange6 === false ? setXhange6(true) : setXhange6(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: xhange2,
+                    tuesday: xhange3,
+                    wednesday: xhange4,
+                    thursday: xhange5,
+                    friday: !xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange6 ? "✅" : "❌"}
           </span>
@@ -103,9 +168,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="7"
-            onClick={() =>
-              xhange7 === false ? setXhange7(true) : setXhange7(false)
-            }
+            onClick={() => {
+              xhange7 === false ? setXhange7(true) : setXhange7(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: xhange1,
+                    monday: xhange2,
+                    tuesday: xhange3,
+                    wednesday: xhange4,
+                    thursday: xhange5,
+                    friday: xhange6,
+                    saturday: !xhange7,
+                  },
+                });
+            }}
           >
             {xhange7 ? "✅" : "❌"}
           </span>

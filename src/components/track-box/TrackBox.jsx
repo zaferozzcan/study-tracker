@@ -8,19 +8,21 @@ import TrackBoxStudy from "../../components/track-box/TrackBoxStudy";
 import { db } from "../../firebase";
 export default function TrackBox() {
   const [studyData, setStudyData] = useState([]);
+  const [studyDataIds, setStudyDataIds] = useState([]);
   useEffect(() => {
     let myData = [];
-
+    let myDataIds = [];
     const fetchData = async () => {
       const data = await db
         .collection("studies")
         .where("user_email", "==", "zaferozzcan@gmail.com")
         .get();
       data.docs.forEach((doc) => {
-        console.log(doc.id);
+        myDataIds.push(doc.id);
         myData.push(doc.data());
       });
       setStudyData([...myData]);
+      setStudyDataIds([...myDataIds]);
     };
     fetchData();
   }, []);
@@ -30,7 +32,7 @@ export default function TrackBox() {
       <TrackBoxHeaderOne />
       <TrackBoxUp />
       {studyData.map((item, index) => (
-        <TrackBoxStudy index={index} data={item} />
+        <TrackBoxStudy key={index} id={studyDataIds[index]} data={item} />
       ))}
     </div>
   );

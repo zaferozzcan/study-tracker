@@ -15,14 +15,11 @@ export default function TrackBoxStudy(props) {
 
   return (
     <div className="track-box-up">
-      <div
-        className="track-box-up-delete"
-        onClick={() => {
-          db.collection("studies").doc().delete();
-        }}
-      >
-        <Button variant="danger">X</Button>
-      </div>
+      <form onSubmit={db.collection("studies").doc(props.id).delete()}>
+        <Button type="submit" variant="danger">
+          X
+        </Button>
+      </form>
       <div className="track-box-up-col-title">{props.data.name}</div>
       <div className="track-box-up-container">
         <div className="track-box-up-col">

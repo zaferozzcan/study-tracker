@@ -13,10 +13,15 @@ export default function TrackBoxStudy(props) {
   const [xhange6, setXhange6] = useState(props.data.days.friday);
   const [xhange7, setXhange7] = useState(props.data.days.saturday);
 
+  function handleDelete(e) {
+    e.preventDefault();
+    db.collection("studies").doc(props.id).delete();
+  }
+
   return (
     <div className="track-box-up">
-      <form onSubmit={db.collection("studies").doc(props.id).delete()}>
-        <Button type="submit" variant="danger">
+      <form>
+        <Button onClick={handleDelete} type="button" variant="danger">
           X
         </Button>
       </form>
@@ -25,9 +30,22 @@ export default function TrackBoxStudy(props) {
         <div className="track-box-up-col">
           <span
             id="1"
-            onClick={() =>
-              xhange1 === false ? setXhange1(true) : setXhange1(false)
-            }
+            onClick={() => {
+              xhange1 === false ? setXhange1(true) : setXhange1(false);
+              db.collection("studies")
+                .doc(props.id)
+                .update({
+                  days: {
+                    sunday: !xhange1,
+                    monday: xhange2,
+                    tuesday: xhange3,
+                    wednesday: xhange4,
+                    thursday: xhange5,
+                    friday: xhange6,
+                    saturday: xhange7,
+                  },
+                });
+            }}
           >
             {xhange1 ? "✅" : "❌"}
           </span>

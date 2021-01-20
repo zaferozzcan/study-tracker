@@ -26,13 +26,27 @@ export default function TrackBox() {
     };
     fetchData();
   }, []);
+
+  function deleteStudy(id) {
+    let newStudyData = studyData.splice(id, 1);
+    console.log(id);
+    setStudyData([...newStudyData]);
+  }
+
   console.log("studyData", studyData);
+
   return (
     <div>
       <TrackBoxHeaderOne />
       <TrackBoxUp />
       {studyData.map((item, index) => (
-        <TrackBoxStudy key={index} id={studyDataIds[index]} data={item} />
+        <TrackBoxStudy
+          del={deleteStudy}
+          key={index}
+          index={index}
+          id={studyDataIds[index]}
+          data={item}
+        />
       ))}
     </div>
   );

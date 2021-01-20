@@ -9,7 +9,7 @@ export default function TrackBoxHeaderOne() {
     <div>
       <header id="header-track">
         <NavLink className="nav-link" to="/">
-          <h1 className="title">My Weekly Study Tracker</h1>
+          <h1 className="title"></h1>
         </NavLink>
       </header>
     </div>

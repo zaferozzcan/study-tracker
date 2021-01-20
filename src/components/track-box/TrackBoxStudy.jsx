@@ -13,18 +13,20 @@ export default function TrackBoxStudy(props) {
   const [xhange6, setXhange6] = useState(props.data.days.friday);
   const [xhange7, setXhange7] = useState(props.data.days.saturday);
 
-  function handleDelete(e) {
-    e.preventDefault();
+  function handleDelete(id) {
     db.collection("studies").doc(props.id).delete();
+    props.del(id);
   }
 
   return (
     <div className="track-box-up">
-      <form>
-        <Button onClick={handleDelete} type="button" variant="danger">
-          X
-        </Button>
-      </form>
+      <Button
+        onClick={() => handleDelete(props.index)}
+        type="button"
+        variant="danger"
+      >
+        X
+      </Button>
       <div className="track-box-up-col-title">{props.data.name}</div>
       <div className="track-box-up-container">
         <div className="track-box-up-col">

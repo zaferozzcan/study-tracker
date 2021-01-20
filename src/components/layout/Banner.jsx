@@ -19,7 +19,16 @@ export default function Banner() {
             className="banner-button"
             variant="success"
           >
-            Get Started
+            Create New Tracker
+          </Button>
+        </Link>
+        <Link to={user ? "/user/track" : "user/signin"}>
+          <Button
+            onClick={handleClick}
+            className="banner-button"
+            variant="success"
+          >
+            Go Track List
           </Button>
         </Link>
       </div>

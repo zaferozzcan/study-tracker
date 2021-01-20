@@ -7,6 +7,7 @@
   box-shadow: 0 0 7px #139e25;
   margin: 1px 1px;
   flex-wrap: nowrap;
+  padding: 3rem 0;
 }
 .track-box-up-container {
   display: flex;

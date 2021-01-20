@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { db } from "../../firebase";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "../../style/create-box.css";
@@ -12,7 +13,6 @@ export default function CreateForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     dispatch({
       type: "ADD_STUDY",
       study: {
@@ -20,6 +20,12 @@ export default function CreateForm() {
         studyCategory,
       },
     });
+
+    db.collection("studies").add({
+      name: studyName,
+      days: { sunday: false, monday: false },
+    });
+
     setStudyName("");
     setStudyCategory("");
     history.push("/user/track");

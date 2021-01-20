@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../style/trackBoxUp.css";
 import { useStateValue } from "../../providers/StateProvider";
 
-export default function TrackBoxStudy() {
+export default function TrackBoxStudy(props) {
   const [xhange1, setXhange1] = useState("❌");
   const [xhange2, setXhange2] = useState("❌");
   const [xhange3, setXhange3] = useState("❌");
@@ -11,12 +11,10 @@ export default function TrackBoxStudy() {
   const [xhange6, setXhange6] = useState("❌");
   const [xhange7, setXhange7] = useState("❌");
   const [{ study }] = useStateValue();
-  console.log(study);
+  console.log(props.data);
   return (
     <div className="track-box-up">
-      <div className="track-box-up-col-title">
-        {study ? study.studyName : "name"}
-      </div>
+      <div className="track-box-up-col-title">{props.data.name}</div>
       <div className="track-box-up-container">
         <div className="track-box-up-col">
           <span

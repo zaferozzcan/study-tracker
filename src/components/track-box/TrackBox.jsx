@@ -10,25 +10,27 @@ export default function TrackBox() {
   const [studyData, setStudyData] = useState([]);
   useEffect(() => {
     let myData = [];
+
     const fetchData = async () => {
       const data = await db
         .collection("studies")
         .where("user_email", "==", "zaferozzcan@gmail.com")
         .get();
       data.docs.forEach((doc) => {
+        console.log(doc.id);
         myData.push(doc.data());
       });
       setStudyData([...myData]);
     };
     fetchData();
   }, []);
-  // console.log("studyData", studyData);
+  console.log("studyData", studyData);
   return (
     <div>
       <TrackBoxHeaderOne />
       <TrackBoxUp />
       {studyData.map((item, index) => (
-        <TrackBoxStudy key={index} data={item} />
+        <TrackBoxStudy index={index} data={item} />
       ))}
     </div>
   );

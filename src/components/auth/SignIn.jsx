@@ -14,7 +14,6 @@ export default function SignIn() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log("auth", auth);
         history.push("/");
       })
       .catch((error) => alert(error.message));

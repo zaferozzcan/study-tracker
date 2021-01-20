@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import { db } from "../../firebase";
+import React, { useState, useEffect } from "react";
+import { db, auth } from "../../firebase";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "../../style/create-box.css";
 import { useStateValue } from "../../providers/StateProvider";
 
 export default function CreateForm() {
-  const history = useHistory();
   const [, dispatch] = useStateValue();
+  const history = useHistory();
+  const [currentUser, setCurrentUser] = useState("");
   const [studyName, setStudyName] = useState("");
   const [studyCategory, setStudyCategory] = useState();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      setCurrentUser(authUser.email);
+    });
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +30,16 @@ export default function CreateForm() {
 
     db.collection("studies").add({
       name: studyName,
-      days: { sunday: false, monday: false },
+      days: {
+        sunday: false,
+        monday: false,
+        tuesday: false,
+        wednesday: false,
+        thursday: false,
+        friday: false,
+        saturday: false,
+      },
+      user_email: currentUser,
     });
 
     setStudyName("");

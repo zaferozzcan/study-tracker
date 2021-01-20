@@ -80,3 +80,10 @@
 /* .track-box-up-col > span {
   margin: 0 auto;
 } */
+
+.track-box-up-checkbox {
+  background-color: green;
+}
+.input-group {
+  background-color: green;
+}

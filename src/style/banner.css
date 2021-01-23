@@ -1,7 +1,11 @@
 .banner {
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-image: url("../images/photo-1471107340929-a87cd0f5b5f3.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
 }
 
 .banner-inner {
@@ -25,6 +29,15 @@
   font-weight: 700;
 }
 
+.banner-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-button {
+  margin-bottom: 2rem;
+}
 /* The typing effect */
 @keyframes typing {
   from {

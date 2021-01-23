@@ -8,7 +8,7 @@ export default function StudyTrack() {
   const { study } = useStateValue();
 
   return (
-    <div>
+    <div className="study-tracker-container">
       <header id="study-track-two">
         {/* <NavLink className="nav-link" to="/">
           <h1 className="title">Studies</h1>

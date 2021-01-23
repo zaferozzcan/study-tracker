@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../style/trackBox.css";
 // import { useStateValue } from "../../providers/StateProvider";
 import TrackBoxHeaderOne from "../../components/track-box/TrackBoxHeaderOne";
 // import TrackBoxHeaderTwo from "../../components/track-box/TrackBoxHeaderTwo";
@@ -36,7 +37,7 @@ export default function TrackBox() {
   console.log("studyData", studyData);
 
   return (
-    <div>
+    <div className="track-box-container">
       <TrackBoxHeaderOne />
       <TrackBoxUp />
       {studyData.map((item, index) => (

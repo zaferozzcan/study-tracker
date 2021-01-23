@@ -1,3 +1,11 @@
+/* .study-tracker-container {
+  background-image: url("../images//sttdy_trcker_bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+} */
+
 #study-track-two {
   height: 50px;
   display: flex;

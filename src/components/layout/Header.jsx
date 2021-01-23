@@ -3,6 +3,24 @@ import { NavLink, useHistory } from "react-router-dom";
 import "../../style/header.css";
 import { auth } from "../../firebase";
 import { useStateValue } from "../../providers/StateProvider";
+import { motion } from "framer-motion";
+
+const headerVarience = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      duration: 0.8,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
 
 export default function Header() {
   const history = useHistory();
@@ -17,9 +35,14 @@ export default function Header() {
     location.includes("signin") || location.includes("register");
 
   return (
-    <header id="header">
+    <motion.header
+      id="header"
+      variants={headerVarience}
+      initial="hidden"
+      animate="visible"
+    >
       <NavLink className="nav-link" to="/">
-        <h1 className="title">Study Tracker</h1>
+        <motion.h1 className="title">Study Tracker</motion.h1>
       </NavLink>
 
       {user ? (
@@ -36,6 +59,6 @@ export default function Header() {
           </NavLink>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }
